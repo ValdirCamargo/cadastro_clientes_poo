@@ -10,10 +10,9 @@ class Cliente
     public $endereco;
     public $telefone;
 
-    public function ordena(){
-        sort($lista);
-    }
+    
 }
+
 $lista = array(
             "Gessica",
             "Jose",
@@ -25,7 +24,6 @@ $lista = array(
             "Vitor",
             "Tizil",
             "Armani");
-//rsort($lista);
 
 
 
