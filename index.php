@@ -5,7 +5,7 @@
     <style type="text/css">
         body{
             background-color: lightskyblue;
-        }
+            }
         div.oi {
             background-color: white;
             width: 700px;
@@ -45,16 +45,45 @@
 <div class="oi">
     <h1> Cadastro dos Usuarios</h1>
 
+
     <?php require_once "Cliente.php";
+
+    $lista = array(
+      "Gessica",
+        "Jose",
+           "Jurema",
+             "Zuleica",
+                "Ana",
+                 "Jose",
+                    "Joao",
+                     "Vitor",
+                        "Tizil",
+                            "Armani");
+
+    require_once "index.php";
+    if(isset($_POST["botao"])) {
+        sort($lista);
+    }else if(isset($_POST["botao2"])){
+        rsort($lista);
+    }
+    ?>
+        <p><h3> Clique para ordenar em ordem alfabetica ou vice versa<h3> </p>
+
+        <form action="index.php" method="post">
+            <input type="submit" value=Ordenar   name="botao">
+            <input type="submit" value=Desordena name="botao2">
+        </form>
+
+<?php
     $cliente1 = new Cliente();
     $j = 0;
-for ($i=0;$i<count($lista);$i++ ){
-    $cliente1->nome=($lista[$i]);
-    $cliente1->cpf=33333333333;
-    $cliente1->endereco="Rua dos loco";
-    $cliente1->telefone=999999999;?>
+    for ($i=0;$i<count($lista);$i++ ){
+        $cliente1->nome=($lista[$i]);
+        $cliente1->cpf=33333333333;
+        $cliente1->endereco="Rua dos loco";
+        $cliente1->telefone=999999999;?>
 
-    <form >
+
 
         <?php
         echo "<br>"
@@ -72,13 +101,6 @@ for ($i=0;$i<count($lista);$i++ ){
         }
         ?>
 
-
-
-
-        </form>
 </div>
-
-
 </body>
-
 </html>
